@@ -1,0 +1,38 @@
+@import "compass/css3/images";
+#header{
+  background:#d8d8d8;
+  @include background-image(linear-gradient(top,#f2f2f2,#d8d8d8));
+  @include ie-gradient(#f2f2f2,#d8d8d8);
+  height:90px;
+  box-shadow:0 1px 10px rgba(#000,.6);
+  .logo{
+    @include in-bl;
+    line-height:90px;
+    img{
+      vertical-align:middle;
+    }
+  }
+  .main-wraper{
+    overflow:hidden;
+  }
+  .nav-list{
+    float:right;
+    overflow:hidden;
+    *zoom:1;
+    li{
+      float:left;
+      line-height:90px;
+      margin-left:$space-l * 2;
+      &.cur a{
+        color:$link;
+      }
+      a{
+        color:#333;
+        font-size:$h5;
+        &:hover{
+          color:$link;
+        }
+      }
+    }
+  }
+}

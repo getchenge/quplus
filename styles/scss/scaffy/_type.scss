@@ -1,0 +1,61 @@
+@import "config";
+
+$hn-sizes:$h1,$h2,$h3,$h4,$h5,$h6;
+$hn-bottom:15px,13px,8px,7px,5px,3px;
+@for $i from 1 through 6{
+  h#{$i},.h#{$i}{
+    font-size:nth($hn-sizes,$i);
+  }
+  h#{$i}{
+    margin-bottom:nth($hn-bottom,$i);
+  }
+}
+
+// Font colors
+.opaque{
+  color: $opaque
+}
+
+.neutral{
+  color: $neutral
+}
+
+.pale{
+  color: $pale
+}
+
+.bare{
+  color: $bare
+}
+
+.firm{
+  color: $firm
+}
+
+.bright{
+  color: $bright
+}
+
+.sharp{
+  color: $sharp
+}
+
+.contrast{
+  color: $contrast
+}
+
+.positive{
+  color: $positive
+}
+
+.negative{
+  color: $negative
+}
+
+a{
+  color:$link;
+  text-decoration:none;
+  &:hover{
+    color:lighten($link,20%);
+  }
+}

@@ -1,0 +1,9 @@
+$ftheight:180px;
+@import "compass/layout/sticky-footer";
+@include sticky-footer($ftheight,'#layout','#fake-footer','#footer');
+
+$content-width:960px;
+.main-wraper{
+  width:$content-width;
+  margin:0 auto;
+}

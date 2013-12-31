@@ -1,0 +1,68 @@
+@mixin in-bl{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  _overflow: hidden;
+}
+
+@mixin sprite($x,$y,$img){
+  background-image:url($img);
+  background-position:$x $y;
+  background-repeat:no-repeat;
+}
+
+@mixin font-smooth{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin text-overflow{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+@mixin unselectable{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select:none;
+}
+
+@mixin webfont($name:awesome,$rename:$name){
+  @font-face {
+    font-family: '#{$rename}';
+    src: url("#{$font_path}#{$name}.eot");
+    src: url("#{$font_path}#{$name}.eot#iefix") format('embedded-opentype'), url("#{$font_path}#{$name}.woff") format('woff'), url("#{$font_path}#{$name}.ttf") format('truetype'), url("#{$font_path}#{$name}.svg##{$name}") format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacfity=$opacity);
+}
+
+@mixin hyphens($mode: auto) {
+  word-wrap: break-word;
+  -webkit-hyphens: $mode;
+  -moz-hyphens: $mode;
+  -ms-hyphens: $mode;
+  -o-hyphens: $mode;
+  hyphens: $mode;
+}
+
+@mixin clearfix{
+  *zoom:1;
+  &:after{
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@import "helper";
